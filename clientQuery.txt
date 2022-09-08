@@ -39,4 +39,21 @@ mutation dele{
   deleteTodo(_id:"6319c8b7aefb8ddf9811edb4")
 }
 
+## update Todo 
+mutation uo($update: updateInput) {
+  updateTodo(_id:"6319c8bbaefb8ddf9811edb8", input:$update){
+    title
+    desc
+    _id
+  }
+}
+
+query variable
+{
+  "update":{
+    "title": "update",
+    "desc": "this should be updated"
+  }
+}
+
 

@@ -16,6 +16,15 @@ const resolvers = {
       await Todo.findByIdAndDelete(args._id);
       return "delete";
     },
+
+    updateTodo: async (_, args) => {
+      const { title, desc } = args.input;
+      return await Todo.findByIdAndUpdate(
+        args._id,
+        { title, desc },
+        { new: true }
+      );
+    },
   },
 };
 
