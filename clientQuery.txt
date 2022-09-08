@@ -1,0 +1,42 @@
+## get specific throgh ID
+query getTodoById {
+  todo(_id:"6319c8bbaefb8ddf9811edb8") {
+    _id
+    title
+    desc
+  }
+}
+
+
+## get all
+query getTodo{
+  todos {
+    _id
+    title
+    desc
+  }
+}
+
+
+## create Todo 
+mutation create($input:createInput!) {
+  createTodo(input: $input){
+    title
+    desc
+  }
+}
+
+query variable
+{
+  "input":{
+    "title":"first",
+    "desc":"this is first..."
+  }
+}
+
+## delete Todo 
+mutation dele{
+  deleteTodo(_id:"6319c8b7aefb8ddf9811edb4")
+}
+
+
